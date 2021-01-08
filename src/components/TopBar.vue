@@ -1,6 +1,7 @@
 <template>
   <div class="topBar">
     <span class="logo">V</span>
+    <input type="search" placeholder="Search...">
     <div class="menu">
       <a v-for="menu in menus" :class="{'menu-item':true, 'activeRoute': activeRoute === menu.route?true:false}"
          :href="menu.route">{{ menu.tag }}</a>
@@ -61,6 +62,25 @@ export default Vue.extend({
     &:hover {
       border-color: lighten(black, 30);
       color: lighten(black, 30);
+    }
+  }
+
+  input[type="search"] {
+    position: absolute;
+    height: 40px;
+    width: 400px;
+    border-radius: 20px;
+    top: 10px;
+    left: 300px;
+    outline: none;
+    padding: 0 20px;
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      height: 16px;
+      width: 16px;
+      background: url(https://yxs-web.oss-cn-beijing.aliyuncs.com/328e4d97f9d0d68ea04e872f68e508e3.png) no-repeat;
+      background-size: contain;
     }
   }
 

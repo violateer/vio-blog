@@ -38,11 +38,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .topBar {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 3px;
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
+  z-index: 2;
 
   .logo {
     position: relative;
@@ -124,6 +127,4 @@ export default Vue.extend({
     }
   }
 }
-
-
 </style>

@@ -53,7 +53,7 @@ export default Vue.extend({
   position: relative;
   padding: 0 50px;
   overflow: hidden;
-  box-shadow: 5px 5px 5px 5px #888888;
+  box-shadow: 5px 5px 5px 5px #cacaca;
 
   .title {
     font-size: 32px;

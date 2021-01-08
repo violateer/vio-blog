@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TopBar/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -16,6 +17,4 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

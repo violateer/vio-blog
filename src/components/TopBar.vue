@@ -2,7 +2,8 @@
   <div class="topBar">
     <span class="logo">V</span>
     <div class="menu">
-      <li v-for="menu in menus" class="menu-item">{{ menu }}</li>
+      <a v-for="menu in menus" :class="{'menu-item':true, 'activeRoute': activeRoute === menu.route?true:false}"
+         :href="menu.route">{{ menu.tag }}</a>
     </div>
   </div>
 </template>
@@ -14,14 +15,29 @@ export default Vue.extend({
   name: 'TopBar',
   data() {
     return {
-      menus: ['主页', '博客', '标签', '分类', '联系']
+      menus: [
+        {route: '/', tag: '主页'},
+        {route: '/blog', tag: '博客'},
+        {route: '/label', tag: '标签'},
+        {route: '/classification', tag: '分类'},
+        {route: '/contact', tag: '联系'}
+      ],
+      activeRoute: null
     };
+  },
+  watch: {
+    '$route': {
+      handler(route) {
+        this.activeRoute = this.$route.path;
+      }
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
 .topBar {
+  position: relative;
   width: 100%;
   padding: 3px;
   display: flex;
@@ -33,23 +49,23 @@ export default Vue.extend({
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: .5px solid darken(white, 20);
-    color: darken(white, 20);
+    border: .5px solid darken(black, 20);
+    color: darken(black, 20);
     justify-content: center;
     align-items: center;
     transition: all .5s;
-    margin: 0 0 0 20px;
+    margin: 3px 0 0 20px;
     cursor: pointer;
     font-size: 24px;
 
     &:hover {
-      border-color: lighten(white, 30);
-      color: lighten(white, 30);
+      border-color: lighten(black, 30);
+      color: lighten(black, 30);
     }
   }
 
   .menu {
-    color: #c3c3c3;
+    color: #000;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -66,16 +82,20 @@ export default Vue.extend({
       &::after {
         content: "";
         position: absolute;
-        width: 0;
+        width: 0px;
         height: 1px;
         bottom: -5px;
         left: 0;
-        background-color: #fff;
+        background-color: #000;
         transition: all 400ms;
       }
 
+      &.activeRoute::after {
+        width: 100%;
+      }
+
       &:hover {
-        color: white;
+        color: black;
 
         &::after {
           width: 100%;
@@ -84,4 +104,6 @@ export default Vue.extend({
     }
   }
 }
+
+
 </style>

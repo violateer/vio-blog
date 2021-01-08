@@ -11,3 +11,13 @@ export default Vue.extend({
   components: {}
 });
 </script>
+
+<style lang="scss" scoped>
+.home {
+  position: relative;
+  width: 1200px;
+  height: 1200px;
+  background-color: green;
+  margin: 0 auto;
+}
+</style>

@@ -3,6 +3,8 @@ import App from './App.vue';
 import router from './router';
 // 引入全局样式
 import '@/assets/css/global.css';
+// 引入iconfont
+import '@/fonts/iconfont.js';
 
 Vue.config.productionTip = false;
 

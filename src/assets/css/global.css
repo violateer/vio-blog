@@ -10,6 +10,12 @@ body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd {
     font-weight: normal;
 }
 
+/*禁用横向滚动条*/
+body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 ul, li, ol {
     list-style: none;
 }
@@ -21,4 +27,20 @@ img {
 a {
     text-decoration: none;
     color: black;
+}
+
+/*版心*/
+.w {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/*font-icon*/
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }

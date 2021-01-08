@@ -1,23 +1,23 @@
 <template>
-  <div class="home">
+  <div class="home w">
+    <Card/>
+    <Card/>
+    <Card/>
+    <Card/>
+    <Card/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Card from '@/components/Card.vue';
 
 export default Vue.extend({
   name: 'Home',
-  components: {}
+  components: {
+    Card
+  }
 });
 </script>
 
-<style lang="scss" scoped>
-.home {
-  position: relative;
-  width: 1200px;
-  height: 1200px;
-  background-color: green;
-  margin: 0 auto;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -87,6 +87,12 @@ export default Vue.extend({
     border: none;
     border-bottom: 1px solid black;
     cursor: pointer;
+    transition: all 250ms;
+
+    &:hover {
+      background-color: #888888;
+      color: white;
+    }
   }
 }
 
